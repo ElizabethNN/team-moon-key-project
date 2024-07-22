@@ -6,8 +6,10 @@ var speed: float
 @export
 var jump_speed: float
 
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var double_jump = false
+var wall_jump = false
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -17,8 +19,9 @@ func _physics_process(delta):
 		double_jump = true;
 
 	# Handle jump.
-	if Input.is_action_just_pressed("movement_up") and (is_on_floor() or double_jump):
+	if Input.is_action_just_pressed("movement_up") and (is_on_floor() or double_jump or wall_jump):
 		double_jump = false if not is_on_floor() else double_jump
+		wall_jump = false
 		velocity.y = -jump_speed
 
 	# Get the input direction and handle the movement/deceleration.
@@ -28,5 +31,11 @@ func _physics_process(delta):
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+	
+	if Input.is_action_pressed("grab_wall") and is_on_wall():
+		velocity.y = 0
+		wall_jump = true
+	
+	
 
 	move_and_slide()
