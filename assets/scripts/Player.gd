@@ -4,8 +4,13 @@ extends CharacterBody2D
 @export
 var speed: float
 @export
+var max_speed: float
+@export
 var jump_speed: float
-
+@export
+var acceleration: float
+@export
+var deceleration: float
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var double_jump = false
@@ -28,9 +33,13 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("movement_left", "movement_right")
 	if direction:
+		speed += acceleration
 		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.x = move_toward(velocity.x, 0, deceleration)
+	
+	if speed > max_speed:
+		speed = max_speed
 	
 	if Input.is_action_pressed("grab_wall") and is_on_wall():
 		velocity.y = 0
