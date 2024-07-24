@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1yut6k7vmk50"]
+
+[ext_resource type="Script" path="res://scenes/characters/Dog.gd" id="1_xf024"]
+
+[sub_resource type="Gradient" id="Gradient_ayt08"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mu6rk"]
+gradient = SubResource("Gradient_ayt08")
+fill_from = Vector2(1, 0.568807)
+fill_to = Vector2(1, 0.00917431)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8uia"]
+size = Vector2(16, 32)
+
+[node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_xf024")
+max_speed = 575.0
+jump_speed = 500.0
+acceleration = 50.0
+deceleration = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.5)
+texture = SubResource("GradientTexture2D_mu6rk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e8uia")
+disabled = true
+debug_color = Color(0, 0.639216, 0.384314, 0.419608)
