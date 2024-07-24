@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://xe6sao3j7off"]
+
+[ext_resource type="Script" path="res://assets/scripts/Shooter.gd" id="1_30x1p"]
+[ext_resource type="Texture2D" uid="uid://bv6dabgpn7ioy" path="res://icon.svg" id="1_khr75"]
+[ext_resource type="Script" path="res://assets/scripts/Health.gd" id="2_vy3t5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b40ma"]
+radius = 18.0278
+
+[node name="Shooter" type="CharacterBody2D"]
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_30x1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.14441e-05, 3.8147e-06)
+scale = Vector2(0.216406, 0.208188)
+texture = ExtResource("1_khr75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b40ma")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_vy3t5")
+
+[node name="InvincibilityTimer" type="Timer" parent="Health"]
+process_callback = 0
+wait_time = 0.2
+
+[connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]

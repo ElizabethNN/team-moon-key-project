@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://684raue4c4dh"]
+[gd_scene load_steps=6 format=3 uid="uid://684raue4c4dh"]
 
-[ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_o0nel"]
+[ext_resource type="Script" path="res://assets/scripts/characters/Player.gd" id="1_o0nel"]
+[ext_resource type="Script" path="res://assets/scripts/Health.gd" id="2_d2xm4"]
 
 [sub_resource type="Gradient" id="Gradient_r2mwd"]
 
@@ -13,13 +14,26 @@ fill_to = Vector2(0.463303, 0.0550459)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afd52"]
 size = Vector2(32, 64)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Human" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_o0nel")
-speed = 300.0
-jump_speed = 400.0
+max_speed = 500.0
+jump_speed = 500.0
+wall_jump_power = 350.0
+acceleration = 50.0
+deceleration = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_odsg0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_afd52")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_d2xm4")
+max_health = 4
+
+[node name="InvincibilityTimer" type="Timer" parent="Health"]
+process_callback = 0
+
+[connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]

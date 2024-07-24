@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bakhidd7g85lx"]
+
+[ext_resource type="Script" path="res://assets/scripts/Projectile.gd" id="1_l0t24"]
+[ext_resource type="Texture2D" uid="uid://bv6dabgpn7ioy" path="res://icon.svg" id="2_5jdf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ouwa"]
+size = Vector2(26, 10)
+
+[node name="Projectile" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 0
+gravity_scale = 0.0
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_l0t24")
+damage = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.08)
+texture = ExtResource("2_5jdf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3ouwa")
+
+[node name="ProjectileTimeoutTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ProjectileTimeoutTimer" to="." method="_on_projectile_timeout_timer_timeout"]
