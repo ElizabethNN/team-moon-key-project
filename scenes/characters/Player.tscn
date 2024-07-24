@@ -17,6 +17,7 @@ size = Vector2(32, 64)
 script = ExtResource("1_o0nel")
 max_speed = 500.0
 jump_speed = 500.0
+wall_jump_power = 350.0
 acceleration = 50.0
 deceleration = 50.0
 

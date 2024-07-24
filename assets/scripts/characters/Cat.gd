@@ -10,6 +10,8 @@ var max_speed: float
 @export
 var jump_speed: float
 @export
+var double_jump_speed: float
+@export
 var acceleration: float
 @export
 var deceleration: float
@@ -29,7 +31,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("movement_up") and (is_on_floor() or double_jump or wall_jump):
 		double_jump = false if not is_on_floor() else double_jump
 		wall_jump = false
-		velocity.y = -jump_speed
+		
+		velocity.y = -jump_speed if is_on_floor() else -double_jump_speed
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
