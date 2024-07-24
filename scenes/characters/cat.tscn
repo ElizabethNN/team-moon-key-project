@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cavnjucoc4378"]
+
+[ext_resource type="Script" path="res://Cat.gd" id="1_xktg0"]
+
+[sub_resource type="Gradient" id="Gradient_4qul1"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xk85g"]
+gradient = SubResource("Gradient_4qul1")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efp0j"]
+size = Vector2(64, 64)
+
+[node name="Cat" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xktg0")
+climing_speed = 100.0
+max_speed = 500.0
+jump_speed = 650.0
+acceleration = 50.0
+deceleration = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_xk85g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_efp0j")
+disabled = true
+debug_color = Color(0.972549, 0.113725, 0.309804, 0.419608)
