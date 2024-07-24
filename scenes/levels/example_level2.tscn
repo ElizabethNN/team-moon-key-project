@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpgxu0p86kfah"]
+[gd_scene load_steps=8 format=3 uid="uid://cpgxu0p86kfah"]
 
 [ext_resource type="Texture2D" uid="uid://deh077mjkrpfh" path="res://assets/sprites/tilemap_develop.png" id="1_83gwo"]
-[ext_resource type="Script" path="res://assets/scripts/levels/example_level2.gd" id="1_tjyeb"]
+[ext_resource type="Script" path="res://scenes/levels/example_level2.gd" id="1_tjyeb"]
 [ext_resource type="PackedScene" uid="uid://684raue4c4dh" path="res://scenes/characters/Player.tscn" id="2_qvhvr"]
+[ext_resource type="PackedScene" uid="uid://bowv2bwwhgj1b" path="res://scenes/other/scene_transition_animation.tscn" id="4_kl33m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi0iu"]
 texture = ExtResource("1_83gwo")
@@ -61,6 +62,9 @@ layer_0/tile_data = PackedInt32Array(-1441792, 131072, 1, -1376256, 131072, 1, -
 
 [node name="Player" parent="." instance=ExtResource("2_qvhvr")]
 position = Vector2(35, -112)
+speed = 0.0
+max_speed = 500.0
+acceleration = 50.0
 deceleration = 75.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -71,5 +75,7 @@ position = Vector2(577, -325)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room_2"]
 position = Vector2(-13, -136)
 shape = SubResource("RectangleShape2D_dc2dm")
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("4_kl33m")]
 
 [connection signal="body_entered" from="Room_2" to="." method="_on_room_2_body_entered"]
