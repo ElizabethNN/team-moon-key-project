@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://684raue4c4dh"]
+[gd_scene load_steps=5 format=3 uid="uid://684raue4c4dh"]
 
-[ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_o0nel"]
-[ext_resource type="PackedScene" uid="uid://cavnjucoc4378" path="res://scenes/characters/cat.tscn" id="2_sr5wg"]
+[ext_resource type="Script" path="res://assets/scripts/characters/Player.gd" id="1_o0nel"]
 
 [sub_resource type="Gradient" id="Gradient_r2mwd"]
 
@@ -26,6 +25,3 @@ texture = SubResource("GradientTexture2D_odsg0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_afd52")
-
-[node name="Cat" parent="." instance=ExtResource("2_sr5wg")]
-visible = false

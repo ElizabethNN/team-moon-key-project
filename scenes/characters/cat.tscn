@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cavnjucoc4378"]
 
-[ext_resource type="Script" path="res://Cat.gd" id="1_xktg0"]
+[ext_resource type="Script" path="res://assets/scripts/characters/Cat.gd" id="1_pho3w"]
 
 [sub_resource type="Gradient" id="Gradient_4qul1"]
 
@@ -13,11 +13,11 @@ size = Vector2(64, 64)
 
 [node name="Cat" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_xktg0")
+script = ExtResource("1_pho3w")
 climing_speed = 100.0
-max_speed = 500.0
+max_speed = 650.0
 jump_speed = 650.0
-acceleration = 50.0
+acceleration = 40.0
 deceleration = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

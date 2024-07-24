@@ -4,10 +4,22 @@ extends Node2D
 var current_form = $Human
 
 @onready
-var forms: Array = [$Human, $Cat]
+var forms: Array = [$Human, $Cat, $Dog]
 
 func _process(delta):
 	
+	
+	if Input.is_action_just_pressed("dog"):
+		for i in forms:
+			i.process_mode = Node.PROCESS_MODE_DISABLED
+			i.set_visible(false)
+			i.get_node("CollisionShape2D").disabled = true
+		$Dog.set_visible(true)
+		$Dog.process_mode = Node.PROCESS_MODE_INHERIT
+		$Dog.position = current_form.position
+		$Dog.get_node("CollisionShape2D").disabled = false
+		current_form = $Dog
+		print(position)
 	
 	if Input.is_action_just_pressed("cat"):
 		for i in forms:
