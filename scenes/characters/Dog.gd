@@ -35,6 +35,7 @@ func _physics_process(delta):
 	if speed > max_speed:
 		speed = max_speed
 	
+	# Wall jump and wall grab
 	if Input.is_action_pressed("grab_wall") and is_on_wall():
 		velocity.y = 0
 		wall_jump = true

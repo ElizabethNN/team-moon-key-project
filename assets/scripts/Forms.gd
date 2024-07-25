@@ -10,10 +10,12 @@ func _process(delta):
 	
 	
 	if Input.is_action_just_pressed("dog"):
+		# Disables all forms
 		for i in forms:
 			i.process_mode = Node.PROCESS_MODE_DISABLED
 			i.set_visible(false)
 			i.get_node("CollisionShape2D").disabled = true
+		# Enables dog
 		$Dog.set_visible(true)
 		$Dog.process_mode = Node.PROCESS_MODE_INHERIT
 		$Dog.position = current_form.position
@@ -22,11 +24,13 @@ func _process(delta):
 		print(position)
 	
 	if Input.is_action_just_pressed("cat"):
+		# Disables all forms
 		for i in forms:
 			i.process_mode = Node.PROCESS_MODE_DISABLED
 			i.set_visible(false)
 			i.get_node("CollisionShape2D").disabled = true
 		$Cat.set_visible(true)
+		# Enables cat
 		$Cat.process_mode = Node.PROCESS_MODE_INHERIT
 		$Cat.position = current_form.position
 		$Cat.get_node("CollisionShape2D").disabled = false
@@ -34,10 +38,12 @@ func _process(delta):
 		print(position)
 		
 	if Input.is_action_just_pressed("human"):
+		# Disables all forms
 		for i in forms:
 			i.process_mode = Node.PROCESS_MODE_DISABLED
 			i.set_visible(false)
 			i.get_node("CollisionShape2D").disabled = true
+		# Enables cat
 		$Human.set_visible(true)
 		$Human.process_mode = Node.PROCESS_MODE_INHERIT
 		$Human.position = current_form.position
