@@ -34,16 +34,18 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("movement_left", "movement_right")
 	if direction:
+		# Handle acceleration
 		speed += acceleration
 		velocity.x = direction * speed	
 	else:
+		# Handle deceleration
 		velocity.x = move_toward(velocity.x, 0, deceleration)
 	
-
+	# Max speed
 	if speed >= max_speed:
 		speed = max_speed
 	
-	
+	# Wall jump and wall grab
 	if Input.is_action_pressed("grab_wall") and is_on_wall_only():
 		velocity.y = 0
 		wall_jump = true
