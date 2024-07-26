@@ -31,7 +31,7 @@ shape = SubResource("RectangleShape2D_afd52")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_d2xm4")
-max_health = 4
+max_health = 6
 
 [node name="InvincibilityTimer" type="Timer" parent="Health"]
 process_callback = 0
