@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export
 var speed: float
+@export
+var attack: int
 var direction = 1
 
 @onready var right_wall = $RightWall
@@ -25,8 +27,12 @@ func _physics_process(delta):
 	if left_wall.is_colliding() or not left_gap.is_colliding():
 		direction = 1
 		
-
 	if is_on_floor():
 		velocity.x = speed * direction
 	
 	move_and_slide()
+
+
+func _on_damage_area_body_entered(body):
+	if(body.get_parent().name == "Forms"):
+		body.get_node("Health").change_health(-attack)

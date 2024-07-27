@@ -18,7 +18,7 @@ func change_health(delta: int):
 		return
 	emit_signal("health_changed", current_health, current_health + delta)
 	current_health += delta
-	print_debug(current_health)
+	print(get_parent().name + ": health is " + str(current_health))
 	timer.start()
 
 func _on_invincibility_timer_timeout():

@@ -14,7 +14,8 @@ fill_to = Vector2(1, 0.00917431)
 size = Vector2(16, 32)
 
 [node name="Dog" type="CharacterBody2D"]
-collision_mask = 5
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_xf024")
 max_speed = 575.0
 jump_speed = 500.0

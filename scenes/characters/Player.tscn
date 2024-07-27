@@ -15,7 +15,8 @@ fill_to = Vector2(0.463303, 0.0550459)
 size = Vector2(32, 64)
 
 [node name="Human" type="CharacterBody2D"]
-collision_mask = 5
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_o0nel")
 max_speed = 500.0
 jump_speed = 500.0
