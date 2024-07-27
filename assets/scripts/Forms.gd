@@ -8,7 +8,6 @@ var forms: Array = [$Human, $Cat, $Dog]
 
 func _process(delta):
 	
-	
 	if Input.is_action_just_pressed("dog"):
 		# Disables all forms
 		current_form.get_node("Health").current_health
@@ -23,8 +22,7 @@ func _process(delta):
 		$Dog.get_node("CollisionShape2D").disabled = false
 		$Dog.get_node("Health").current_health = current_form.get_node("Health").current_health
 		current_form = $Dog
-		print(position)
-		print_debug(current_form.get_node("Health").current_health)
+		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
 	
 	if Input.is_action_just_pressed("cat"):
 		# Disables all forms
@@ -40,8 +38,7 @@ func _process(delta):
 		$Cat.get_node("CollisionShape2D").disabled = false
 		$Cat.get_node("Health").current_health = current_form.get_node("Health").current_health
 		current_form = $Cat
-		print(position)
-		print_debug(current_form.get_node("Health").current_health)
+		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
 		
 	if Input.is_action_just_pressed("human"):
 		# Disables all forms
@@ -57,11 +54,4 @@ func _process(delta):
 		$Human.get_node("CollisionShape2D").disabled = false
 		$Human.get_node("Health").current_health = current_form.get_node("Health").current_health
 		current_form = $Human 
-		print(position)
-		print_debug(current_form.get_node("Health").current_health)
-
-
-func get_current_form():
-	return current_form
-
-
+		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
