@@ -6,6 +6,8 @@ var projectile_speed: float
 var bullet = preload("res://scenes/misc/TurretProjectile.tscn")
 @export var direction: Vector2 
 var radianDirection: float
+@export
+var apply_gravity: bool
 
 @onready var  attackTimer:Timer = get_node("AttackTimer")
 
@@ -14,7 +16,7 @@ func _ready():
 	attackTimer.start()
 
 func _physics_process(delta):
-	if not is_on_floor():
+	if not is_on_floor() and apply_gravity:
 		velocity.y += gravity * delta
 	move_and_slide()
 

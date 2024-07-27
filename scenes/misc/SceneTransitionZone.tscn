@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://brjfwpe440x0q"]
+
+[ext_resource type="Script" path="res://assets/scripts/SceneTransitionZone.gd" id="1_lihk6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gcs2"]
+size = Vector2(16, 16)
+
+[node name="SceneTransitionZone" type="Area2D"]
+collision_mask = 5
+script = ExtResource("1_lihk6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0gcs2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
