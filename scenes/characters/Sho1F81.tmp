@@ -17,7 +17,6 @@ radius = 290.0
 radius = 217.113
 
 [node name="Shooter" type="CharacterBody2D"]
-collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_30x1p")
@@ -41,21 +40,18 @@ process_callback = 0
 wait_time = 0.2
 
 [node name="DetectionArea" type="Area2D" parent="."]
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 shape = SubResource("CircleShape2D_xekn4")
 debug_color = Color(0.563789, 0.558543, 0, 0.42)
 
 [node name="AttackRadius" type="Area2D" parent="."]
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRadius"]
 shape = SubResource("CircleShape2D_pv1o8")
 debug_color = Color(0.883102, 0.322258, 0.242988, 0.42)
 
 [node name="SafeArea" type="Area2D" parent="."]
-collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SafeArea"]
 shape = SubResource("CircleShape2D_nyqtp")
