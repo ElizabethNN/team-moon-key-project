@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://deh077mjkrpfh" path="res://assets/sprites/tilemap_develop.png" id="1_2hqj3"]
 [ext_resource type="Script" path="res://assets/scripts/levels/example_level.gd" id="1_xhuwx"]
 [ext_resource type="PackedScene" uid="uid://biucl7cpx7gf" path="res://scenes/characters/Forms.tscn" id="3_yq6g1"]
-[ext_resource type="PackedScene" path="res://scenes/characters/Shooter.tscn" id="4_s06du"]
+[ext_resource type="PackedScene" uid="uid://xe6sao3j7off" path="res://scenes/characters/Shooter.tscn" id="4_s06du"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi0iu"]
 texture = ExtResource("1_2hqj3")
