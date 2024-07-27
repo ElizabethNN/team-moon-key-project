@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1yut6k7vmk50"]
+[gd_scene load_steps=6 format=3 uid="uid://c1yut6k7vmk50"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/Dog.gd" id="1_xf024"]
+[ext_resource type="Script" path="res://assets/scripts/Health.gd" id="2_00536"]
 
 [sub_resource type="Gradient" id="Gradient_ayt08"]
 
@@ -13,6 +14,7 @@ fill_to = Vector2(1, 0.00917431)
 size = Vector2(16, 32)
 
 [node name="Dog" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_xf024")
 max_speed = 575.0
 jump_speed = 500.0
@@ -27,3 +29,11 @@ texture = SubResource("GradientTexture2D_mu6rk")
 shape = SubResource("RectangleShape2D_e8uia")
 disabled = true
 debug_color = Color(0, 0.639216, 0.384314, 0.419608)
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_00536")
+max_health = 6
+
+[node name="InvincibilityTimer" type="Timer" parent="Health"]
+
+[connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]
