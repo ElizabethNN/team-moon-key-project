@@ -46,3 +46,5 @@ offset_right = 30.0
 offset_bottom = -40.0
 max_value = 6.0
 show_percentage = false
+
+[connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]

@@ -33,4 +33,3 @@ func change_health(delta: int):
 
 func _on_invincibility_timer_timeout():
 	timer.stop()
-	pass # Replace with function body.
