@@ -11,9 +11,25 @@ script = ExtResource("1_jl0x2")
 [node name="Cat" parent="." instance=ExtResource("2_08uk7")]
 process_mode = 4
 visible = false
+climing_speed = 190.0
+max_speed = 900.0
+jump_speed = 750.0
+double_jump_speed = 500.0
+acceleration = 80.0
+deceleration = 80.0
 
 [node name="Human" parent="." instance=ExtResource("3_5sr4t")]
+max_speed = 700.0
+jump_speed = 600.0
+wall_jump_power = 500.0
+acceleration = 70.0
+deceleration = 70.0
 
 [node name="Dog" parent="." instance=ExtResource("4_af5gy")]
 process_mode = 4
 visible = false
+scale = Vector2(3.5, 3.5)
+max_speed = 700.0
+jump_speed = 600.0
+acceleration = 70.0
+deceleration = 70.0

@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1yut6k7vmk50"]
+[gd_scene load_steps=5 format=3 uid="uid://c1yut6k7vmk50"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/Dog.gd" id="1_xf024"]
 [ext_resource type="Script" path="res://assets/scripts/Health.gd" id="2_00536"]
-
-[sub_resource type="Gradient" id="Gradient_ayt08"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mu6rk"]
-gradient = SubResource("Gradient_ayt08")
-fill_from = Vector2(1, 0.568807)
-fill_to = Vector2(1, 0.00917431)
+[ext_resource type="Texture2D" uid="uid://dx2701vptcucj" path="res://assets/sprites/dog.png" id="2_jmwks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8uia"]
 size = Vector2(16, 32)
@@ -23,10 +17,13 @@ acceleration = 50.0
 deceleration = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.5)
-texture = SubResource("GradientTexture2D_mu6rk")
+position = Vector2(1, -4)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_jmwks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.5, 0.4)
 shape = SubResource("RectangleShape2D_e8uia")
 disabled = true
 debug_color = Color(0, 0.639216, 0.384314, 0.419608)
