@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://xe6sao3j7off"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/Shooter.gd" id="1_30x1p"]
-[ext_resource type="Texture2D" uid="uid://bv6dabgpn7ioy" path="res://icon.svg" id="1_khr75"]
+[ext_resource type="Texture2D" uid="uid://cvjafl703asjn" path="res://assets/sprites/flying_fly0001.png" id="2_o6apo"]
 [ext_resource type="Script" path="res://assets/scripts/Health.gd" id="2_vy3t5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b40ma"]
-radius = 18.0278
+radius = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xekn4"]
 radius = 461.0
@@ -28,7 +28,7 @@ attack_speed = 200.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.14441e-05, 3.8147e-06)
 scale = Vector2(0.216406, 0.208188)
-texture = ExtResource("1_khr75")
+texture = ExtResource("2_o6apo")
 
 [node name="EnemyCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b40ma")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://biucl7cpx7gf"]
 
 [ext_resource type="Script" path="res://assets/scripts/Forms.gd" id="1_jl0x2"]
-[ext_resource type="PackedScene" uid="uid://cavnjucoc4378" path="res://scenes/characters/Cat.tscn" id="2_08uk7"]
+[ext_resource type="PackedScene" uid="uid://cavnjucoc4378" path="res://scenes/characters/cat.tscn" id="2_08uk7"]
 [ext_resource type="PackedScene" uid="uid://684raue4c4dh" path="res://scenes/characters/Player.tscn" id="3_5sr4t"]
 [ext_resource type="PackedScene" uid="uid://c1yut6k7vmk50" path="res://scenes/characters/Dog.tscn" id="4_af5gy"]
 
@@ -11,9 +11,25 @@ script = ExtResource("1_jl0x2")
 [node name="Cat" parent="." instance=ExtResource("2_08uk7")]
 process_mode = 4
 visible = false
+climing_speed = 190.0
+max_speed = 900.0
+jump_speed = 750.0
+double_jump_speed = 500.0
+acceleration = 80.0
+deceleration = 80.0
 
 [node name="Human" parent="." instance=ExtResource("3_5sr4t")]
+max_speed = 700.0
+jump_speed = 600.0
+wall_jump_power = 500.0
+acceleration = 70.0
+deceleration = 70.0
 
 [node name="Dog" parent="." instance=ExtResource("4_af5gy")]
 process_mode = 4
 visible = false
+scale = Vector2(3.5, 3.5)
+max_speed = 700.0
+jump_speed = 600.0
+acceleration = 70.0
+deceleration = 70.0

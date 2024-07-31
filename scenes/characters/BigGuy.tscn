@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bb8msrtgpigex"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/MeleeEnemy.gd" id="1_3qpog"]
-[ext_resource type="Texture2D" uid="uid://bv6dabgpn7ioy" path="res://icon.svg" id="2_ivql0"]
+[ext_resource type="Texture2D" uid="uid://6g1ljrf42lu" path="res://assets/sprites/enemy_attack0001.png" id="2_jfpa7"]
 [ext_resource type="Script" path="res://assets/scripts/Health.gd" id="3_fbv17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3t2a"]
@@ -16,14 +16,14 @@ size = Vector2(146, 60)
 [node name="BigGuy" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_3qpog")
-roam_speed = 50.0
+roam_speed = 85.0
 attack_speed = 75.0
 attack = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, 1.72853e-06)
-scale = Vector2(0.5, 0.46875)
-texture = ExtResource("2_ivql0")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_jfpa7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

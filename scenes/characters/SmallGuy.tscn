@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bghtjfjyyka0b"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/MeleeEnemy.gd" id="1_b1da3"]
-[ext_resource type="Texture2D" uid="uid://bv6dabgpn7ioy" path="res://icon.svg" id="2_gg1mt"]
+[ext_resource type="Texture2D" uid="uid://gov62k6i6noe" path="res://assets/sprites/big attack0001.png" id="2_pq67h"]
 [ext_resource type="Script" path="res://assets/scripts/Health.gd" id="3_pngws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3t2a"]
@@ -21,9 +21,9 @@ attack_speed = 150.0
 attack = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1.14441e-05, 3.8147e-06)
-scale = Vector2(0.216406, 0.208188)
-texture = ExtResource("2_gg1mt")
+position = Vector2(0, -8)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_pq67h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d3t2a")

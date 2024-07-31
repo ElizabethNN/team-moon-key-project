@@ -1,13 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cavnjucoc4378"]
+[gd_scene load_steps=5 format=3 uid="uid://cavnjucoc4378"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/Cat.gd" id="1_pho3w"]
 [ext_resource type="Script" path="res://assets/scripts/Health.gd" id="2_a8pwe"]
-
-[sub_resource type="Gradient" id="Gradient_4qul1"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xk85g"]
-gradient = SubResource("Gradient_4qul1")
-fill_from = Vector2(1, 1)
+[ext_resource type="Texture2D" uid="uid://bihlom6xq5dp5" path="res://assets/sprites/cat.png" id="2_hohjt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efp0j"]
 size = Vector2(64, 64)
@@ -25,9 +20,13 @@ acceleration = 50.0
 deceleration = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_xk85g")
+position = Vector2(6, -32)
+scale = Vector2(0.25, 0.3)
+texture = ExtResource("2_hohjt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+scale = Vector2(1.65, 1)
 shape = SubResource("RectangleShape2D_efp0j")
 disabled = true
 debug_color = Color(0.972549, 0.113725, 0.309804, 0.419608)

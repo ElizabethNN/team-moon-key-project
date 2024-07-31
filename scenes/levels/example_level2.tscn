@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpgxu0p86kfah"]
+[gd_scene load_steps=7 format=3 uid="uid://cpgxu0p86kfah"]
 
 [ext_resource type="Texture2D" uid="uid://deh077mjkrpfh" path="res://assets/sprites/tilemap_develop.png" id="1_83gwo"]
 [ext_resource type="PackedScene" uid="uid://biucl7cpx7gf" path="res://scenes/characters/Forms.tscn" id="2_5t4cg"]
 [ext_resource type="PackedScene" uid="uid://brjfwpe440x0q" path="res://scenes/misc/SceneTransitionZone.tscn" id="3_204u7"]
+[ext_resource type="PackedScene" uid="uid://bb8msrtgpigex" path="res://scenes/characters/BigGuy.tscn" id="4_1bjmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi0iu"]
 texture = ExtResource("1_83gwo")
@@ -64,3 +65,6 @@ position = Vector2(43, -111)
 position = Vector2(-10, -135)
 scale = Vector2(1.15867, 6.13911)
 next_scene = "res://scenes/levels/example_level.tscn"
+
+[node name="BigGuy" parent="." instance=ExtResource("4_1bjmc")]
+position = Vector2(500, -117)
