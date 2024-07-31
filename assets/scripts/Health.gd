@@ -15,6 +15,8 @@ signal health_changed(old_value, new_value)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_health = max_health
+	health_bar.max_value = max_health
+	health_bar.value = current_health
 
 func change_health(delta: int):
 	health_bar.value = current_health
