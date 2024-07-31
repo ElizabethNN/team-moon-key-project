@@ -66,6 +66,7 @@ debug_color = Color(0.983869, 0.12534, 3.85046e-07, 0.42)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_fbv17")
+max_health = 10
 
 [node name="InvincibilityTimer" type="Timer" parent="Health"]
 process_callback = 0
@@ -90,6 +91,7 @@ show_percentage = false
 [connection signal="body_exited" from="DetectArea" to="." method="_on_detect_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
+[connection signal="health_changed" from="Health" to="." method="_on_health_health_changed"]
 [connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="DetectTimer" to="." method="_on_detect_timer_timeout"]

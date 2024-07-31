@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgxffdjjyo4o"]
 
 [ext_resource type="Script" path="res://assets/scripts/characters/Turret.gd" id="1_nflf6"]
-[ext_resource type="Texture2D" uid="uid://bv6dabgpn7ioy" path="res://icon.svg" id="2_qac62"]
+[ext_resource type="Texture2D" uid="uid://cc0lpa0l8tpv1" path="res://assets/sprites/turret_throw0001.png" id="2_mw45s"]
 [ext_resource type="Script" path="res://assets/scripts/Health.gd" id="3_s5qdc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8cyo5"]
@@ -16,7 +16,7 @@ direction = Vector2(1, 0)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.14441e-05, 3.8147e-06)
 scale = Vector2(0.216406, 0.208188)
-texture = ExtResource("2_qac62")
+texture = ExtResource("2_mw45s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8cyo5")
@@ -39,5 +39,6 @@ offset_bottom = -40.0
 max_value = 6.0
 show_percentage = false
 
+[connection signal="health_changed" from="Health" to="." method="_on_health_health_changed"]
 [connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -123,3 +123,7 @@ func _on_idle_timer_timeout():
 	velocity.x = random_delta
 	idle_timer.stop()
 	idle_timer.start()
+
+func _on_health_health_changed(old_value, new_value):
+	if(new_value <= 0):
+		queue_free()

@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_d3t2a")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_xraio")
+max_health = 2
 
 [node name="InvincibilityTimer" type="Timer" parent="Health"]
 process_callback = 0
@@ -65,5 +66,6 @@ offset_bottom = -40.0
 max_value = 6.0
 show_percentage = false
 
+[connection signal="health_changed" from="Health" to="." method="_on_health_health_changed"]
 [connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

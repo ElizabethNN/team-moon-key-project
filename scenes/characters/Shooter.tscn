@@ -76,6 +76,7 @@ offset_bottom = -40.0
 max_value = 6.0
 show_percentage = false
 
+[connection signal="health_changed" from="Health" to="." method="_on_health_health_changed"]
 [connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

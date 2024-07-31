@@ -109,3 +109,8 @@ func _on_detect_timer_timeout():
 	current_state = "Idle"
 	print(name + ": Changed to " + current_state)
 	player = null
+
+
+func _on_health_health_changed(old_value, new_value):
+	if(new_value <= 0):
+		queue_free()

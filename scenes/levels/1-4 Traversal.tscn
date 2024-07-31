@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjnmw3vyps2t4"]
+[gd_scene load_steps=7 format=3 uid="uid://dykk2arg46i1v"]
 
-[ext_resource type="TileSet" uid="uid://bf48hmmbq57up" path="res://assets/sprites/Grass_Tiles.tres" id="1_t7akk"]
+[ext_resource type="TileSet" uid="uid://dj8sy2h4d2yye" path="res://assets/sprites/Grass_Tiles.tres" id="1_t7akk"]
 [ext_resource type="PackedScene" uid="uid://biucl7cpx7gf" path="res://scenes/characters/Forms.tscn" id="2_cwywy"]
 [ext_resource type="PackedScene" uid="uid://brjfwpe440x0q" path="res://scenes/misc/SceneTransitionZone.tscn" id="3_8xwqi"]
 [ext_resource type="PackedScene" uid="uid://cu4lavcewukdp" path="res://scenes/characters/GoombaPatrol.tscn" id="4_rpk10"]
-[ext_resource type="PackedScene" uid="uid://bgxffdjjyo4o" path="res://scenes/characters/RTurret.tscn" id="5_t0of2"]
-[ext_resource type="PackedScene" uid="uid://darfxjccmysx8" path="res://scenes/characters/LTurret.tscn" id="6_lkwsg"]
+[ext_resource type="PackedScene" uid="uid://bgxffdjjyo4o" path="res://scenes/characters/Turret.tscn" id="5_t0of2"]
+[ext_resource type="PackedScene" uid="uid://oc2eb3sw4law" path="res://scenes/characters/LTurret.tscn" id="6_lkwsg"]
 
 [node name="ExampleLevel" type="Node2D"]
 
