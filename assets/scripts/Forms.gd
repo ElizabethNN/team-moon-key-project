@@ -21,6 +21,7 @@ func _process(delta):
 		$Dog.position = current_form.position
 		$Dog.get_node("CollisionShape2D").disabled = false
 		$Dog.get_node("Health").current_health = current_form.get_node("Health").current_health
+		$Dog.get_node("HealthBar").value = current_form.get_node("Health").current_health
 		current_form = $Dog
 		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
 	
@@ -37,6 +38,7 @@ func _process(delta):
 		$Cat.position = current_form.position
 		$Cat.get_node("CollisionShape2D").disabled = false
 		$Cat.get_node("Health").current_health = current_form.get_node("Health").current_health
+		$Cat.get_node("HealthBar").value = current_form.get_node("Health").current_health
 		current_form = $Cat
 		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
 		
@@ -53,5 +55,6 @@ func _process(delta):
 		$Human.position = current_form.position
 		$Human.get_node("CollisionShape2D").disabled = false
 		$Human.get_node("Health").current_health = current_form.get_node("Health").current_health
+		$Human.get_node("HealthBar").value = current_form.get_node("Health").current_health
 		current_form = $Human 
 		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
