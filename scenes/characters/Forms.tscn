@@ -34,6 +34,7 @@ max_speed = 700.0
 jump_speed = 600.0
 acceleration = 70.0
 deceleration = 70.0
+
 [node name="Bear" parent="." instance=ExtResource("5_6wlnd")]
 process_mode = 4
 visible = false
