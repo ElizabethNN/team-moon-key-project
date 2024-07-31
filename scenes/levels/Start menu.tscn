@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpe22w1qcerrq"]
+[gd_scene load_steps=3 format=3 uid="uid://dpe22w1qcerrq"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_wjhp3"]
+[ext_resource type="Texture2D" uid="uid://cu5d8i6srtj7k" path="res://assets/sprites/cover.png" id="2_4h5vq"]
 
 [node name="Menu" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,11 +14,13 @@ grow_vertical = 2
 script = ExtResource("1_wjhp3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 1
 layout_mode = 0
-offset_left = 920.0
-offset_top = 504.0
-offset_right = 966.0
-offset_bottom = 570.0
+offset_left = 816.0
+offset_top = 376.0
+offset_right = 862.0
+offset_bottom = 442.0
+scale = Vector2(5, 5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -28,6 +32,14 @@ text = "Start"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Node2D" type="Node2D" parent="."]
+visibility_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(960, 544)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("2_4h5vq")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
