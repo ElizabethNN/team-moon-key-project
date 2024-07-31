@@ -18,6 +18,8 @@ func _ready():
 	health_bar.max_value = max_health
 	health_bar.value = current_health
 
+
+
 func change_health(delta: int):
 	health_bar.value = current_health
 	if not timer.is_stopped():

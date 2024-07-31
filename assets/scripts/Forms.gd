@@ -8,6 +8,9 @@ var forms: Array = [$Human, $Cat, $Dog]
 
 func _process(delta):
 	
+	if current_form.get_node("Health").current_health <= 0:
+		get_tree().reload_current_scene()
+	
 	if Input.is_action_just_pressed("dog"):
 		# Disables all forms
 		current_form.get_node("Health").current_health
