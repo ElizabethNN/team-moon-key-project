@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://wf7oip3jb532"]
+[gd_scene load_steps=8 format=3 uid="uid://b2kipy5c22kle"]
 
 [ext_resource type="Texture2D" uid="uid://deh077mjkrpfh" path="res://assets/sprites/tilemap_develop.png" id="1_syd0l"]
 [ext_resource type="PackedScene" uid="uid://biucl7cpx7gf" path="res://scenes/characters/Forms.tscn" id="2_tlwsa"]
 [ext_resource type="PackedScene" uid="uid://brjfwpe440x0q" path="res://scenes/misc/SceneTransitionZone.tscn" id="3_ivs3w"]
 [ext_resource type="PackedScene" uid="uid://cu4lavcewukdp" path="res://scenes/characters/GoombaPatrol.tscn" id="4_g1vic"]
-[ext_resource type="PackedScene" uid="uid://bgxffdjjyo4o" path="res://scenes/characters/RTurret.tscn" id="5_310mr"]
+[ext_resource type="PackedScene" uid="uid://bgxffdjjyo4o" path="res://scenes/characters/Turret.tscn" id="5_310mr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi0iu"]
 texture = ExtResource("1_syd0l")
@@ -51,6 +51,11 @@ sources/0 = SubResource("TileSetAtlasSource_xi0iu")
 
 [node name="ExampleLevel" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(366.4, -1856)
+scale = Vector2(2.6, 2.6)
+zoom = Vector2(0.4, 0.4)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_waa2h")
 format = 2
@@ -59,10 +64,6 @@ layer_0/tile_data = PackedInt32Array(-196608, 0, 0, -131072, 0, 1, -65536, 0, 2,
 [node name="Forms" parent="." instance=ExtResource("2_tlwsa")]
 position = Vector2(1032, -88)
 scale = Vector2(2.6, 2.6)
-
-[node name="Camera2D" type="Camera2D" parent="Forms"]
-position = Vector2(-256, -680)
-zoom = Vector2(0.4, 0.4)
 
 [node name="SceneTransitionZone" parent="." instance=ExtResource("3_ivs3w")]
 position = Vector2(280, -1544)

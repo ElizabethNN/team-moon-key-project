@@ -30,3 +30,7 @@ func fire_projectile(direction: float):
 	bullet_instance.rotation = direction
 	bullet_instance.apply_impulse(Vector2(projectile_speed, 0).rotated(direction), Vector2())
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
+
+func _on_health_health_changed(old_value, new_value):
+	if(new_value <= 0):
+		queue_free()

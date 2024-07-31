@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bb8msrtgpigex" path="res://scenes/characters/BigGuy.tscn" id="5_d0fc0"]
 [ext_resource type="PackedScene" uid="uid://cu4lavcewukdp" path="res://scenes/characters/GoombaPatrol.tscn" id="5_ntxc1"]
 [ext_resource type="PackedScene" uid="uid://xe6sao3j7off" path="res://scenes/characters/Shooter.tscn" id="7_6ietu"]
-[ext_resource type="PackedScene" uid="uid://bgxffdjjyo4o" path="res://scenes/characters/RTurret.tscn" id="8_5ewis"]
+[ext_resource type="PackedScene" uid="uid://bgxffdjjyo4o" path="res://scenes/characters/Turret.tscn" id="8_5ewis"]
 [ext_resource type="PackedScene" uid="uid://brjfwpe440x0q" path="res://scenes/misc/SceneTransitionZone.tscn" id="8_b8nsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xi0iu"]

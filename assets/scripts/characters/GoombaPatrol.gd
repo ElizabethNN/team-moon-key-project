@@ -36,3 +36,8 @@ func _physics_process(delta):
 func _on_damage_area_body_entered(body):
 	if(body.get_parent().name == "Forms"):
 		body.get_node("Health").change_health(-attack)
+		
+
+func _on_health_health_changed(old_value, new_value):
+	if(new_value <= 0):
+		queue_free()
