@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://devkq3i8kjs7i"]
+
+[ext_resource type="Script" path="res://assets/scripts/characters/bear.gd" id="1_1acwf"]
+[ext_resource type="Script" path="res://assets/scripts/Health.gd" id="1_o68ya"]
+
+[sub_resource type="Gradient" id="Gradient_q2dfp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xpqfu"]
+gradient = SubResource("Gradient_q2dfp")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of5o0"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5hf2"]
+size = Vector2(157, 138)
+
+[node name="Bear" type="CharacterBody2D"]
+script = ExtResource("1_1acwf")
+max_speed = 300.0
+acceleration = 50.0
+deceleration = 50.0
+attack = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_xpqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_of5o0")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("1_o68ya")
+max_health = 6
+
+[node name="InvincibilityTimer" type="Timer" parent="Health"]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.129412, 0.878431, 0, 1)
+offset_left = -56.0
+offset_top = -72.0
+offset_right = 56.0
+offset_bottom = -57.0
+max_value = 6.0
+show_percentage = false
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+visible = false
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_j5hf2")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Health/InvincibilityTimer" to="Health" method="_on_invincibility_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

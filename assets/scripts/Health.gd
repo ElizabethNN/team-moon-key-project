@@ -21,7 +21,6 @@ func _ready():
 
 
 func change_health(delta: int):
-	health_bar.value = current_health
 	if not timer.is_stopped():
 		return
 	emit_signal("health_changed", current_health, current_health + delta)
@@ -29,7 +28,7 @@ func change_health(delta: int):
 	print(get_parent().name + ": health is " + str(current_health))
 	timer.start()
 	
-
+	health_bar.value = current_health
 	if current_health >= 6:
 		health_bar.visible = false
 	else:

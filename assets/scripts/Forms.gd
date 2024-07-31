@@ -4,7 +4,7 @@ extends Node2D
 var current_form = $Human
 
 @onready
-var forms: Array = [$Human, $Cat, $Dog]
+var forms: Array = [$Human, $Cat, $Dog, $Bear]
 
 func _process(delta):
 	
@@ -57,4 +57,19 @@ func _process(delta):
 		$Human.get_node("CollisionShape2D").disabled = false
 		$Human.get_node("Health").current_health = current_form.get_node("Health").current_health
 		current_form = $Human 
+		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
+	if Input.is_action_just_pressed("bear"):
+		# Disables all forms
+		current_form.get_node("Health").current_health
+		for i in forms:
+			i.process_mode = Node.PROCESS_MODE_DISABLED
+			i.set_visible(false)
+			i.get_node("CollisionShape2D").disabled = true
+		# Enables dog
+		$Bear.set_visible(true)
+		$Bear.process_mode = Node.PROCESS_MODE_INHERIT
+		$Bear.position = current_form.position
+		$Bear.get_node("CollisionShape2D").disabled = false
+		$Bear.get_node("Health").current_health = current_form.get_node("Health").current_health
+		current_form = $Bear
 		print(current_form.name + ": Health is " + str(current_form.get_node("Health").current_health))
